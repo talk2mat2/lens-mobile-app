@@ -9,7 +9,7 @@
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#A53694"
     },
     "assetBundlePatterns": [
       "**/*"
@@ -20,11 +20,20 @@
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
-      }
+        "backgroundColor": "#FFFFFF"
+      },
+      "package": "com.don_martins.lens"
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "extra": {
+      "eas": {
+        "projectId": "4e1fd802-2ba5-40a0-a9ba-cd0af5387ec2"
+      }
+    },
+    "plugins": [
+      "expo-font"
+    ]
   }
 }
