@@ -57,7 +57,7 @@ const SignIn = ({ navigation }) => {
         </View>
         <ButtonC
           onPress={() => navigation.navigate("Login")}
-          textStyle={{ color: colors.textColor2, fontWeight: "bold" }}
+          textStyle={{ color: colors.textColor2, fontWeight: "bold" ,color:color.white}}
           style={{ height: 50, backgroundColor: colors.primary }}
           title="Go to sign in "
         />

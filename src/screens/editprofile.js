@@ -51,7 +51,7 @@ const EditProfile = ({ navigation, route, setLoading }) => {
   // React.useEffect(() => {
   //   // console.log(data);
   // }, [isLoading]);
-
+  const ddd = true;
   const uploadprofile = async (Image) => {
     let formData = new FormData();
     formData.append("File", {
@@ -161,10 +161,12 @@ const EditProfile = ({ navigation, route, setLoading }) => {
         // validationSchema={{}}
         initialValues={{
           // email: user?.email || "",
-          userName: user?.userName || "",
+          // userName: user?.userName || "",
+          // LinktoWhatsapp: user?.LinktoWhatsapp || false,
+          LinktoWhatsapp: ddd || null,
           brand: user?.brand || "",
           phoneNo: user?.phoneNo || "",
-          location:"12, Greg Street, UK"
+          location: "12, Greg Street, UK",
         }}
         onSubmit={(values) => {
           subMitdata(values);
@@ -181,6 +183,7 @@ const EditProfile = ({ navigation, route, setLoading }) => {
           setFieldValue,
         }) => (
           <ScrollView>
+            {console.log(values.LinktoWhatsapp)}
             <View style={{ marginTop: "6%", paddingHorizontal: 10 }}>
               <View
                 style={{
@@ -294,7 +297,7 @@ const EditProfile = ({ navigation, route, setLoading }) => {
                     borderWidth: 1,
                     paddingVertical: 4,
                     paddingLeft: 16,
-                    paddingRight:10,
+                    paddingRight: 10,
                     borderRadius: 15,
                     marginBottom: 20,
                     flexDirection: "row",
@@ -309,14 +312,17 @@ const EditProfile = ({ navigation, route, setLoading }) => {
                       fontSize: 16,
                     }}
                   >
-                    Enabled
+                    {values.LinktoWhatsapp == true ? "Enabled" : "Disabled"}
                   </Text>
                   <View
                     style={{
                       height: 27,
                       width: 27,
                       borderRadius: 40,
-                      backgroundColor: "#00A453",
+                      backgroundColor:
+                        values.LinktoWhatsapp == true
+                          ? color.green
+                          : color.error,
                     }}
                   ></View>
                 </View>

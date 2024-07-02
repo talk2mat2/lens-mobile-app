@@ -39,6 +39,7 @@ import WithSpinner from "../components/withspinner";
 import { useState } from "react";
 import { appToast } from "../components/Helpers";
 import { logIn } from "../redux/reducers/usersSlice";
+import ChatScreen from "../components/chatscreen";
 
 const imageBck = require("../../assets/back2.jpeg");
 
@@ -248,7 +249,7 @@ const Account = ({ navigation, setLoading }) => {
             <TextInput
               style={styles.inputText}
               defaultValue={details}
-              autoCapitalize={true}
+              autoCapitalize={"words"}
               placeholder={"Add description"}
               autoFocus={true}
               onChangeText={setDetails}
@@ -310,6 +311,16 @@ const Account = ({ navigation, setLoading }) => {
           Profile
         </Text> */}
               <TouchableNativeFeedback
+              // onPress={() => navigation.navigate("settings")}
+              >
+                <AntDesign
+                  style={{ marginHorizontal: 20 }}
+                  color={color.white}
+                  size={24}
+                  name="sharealt"
+                />
+              </TouchableNativeFeedback>
+              <TouchableNativeFeedback
                 onPress={() => navigation.navigate("settings")}
               >
                 <AntDesign color={color.white} name="setting" size={24} />
@@ -347,7 +358,7 @@ const Account = ({ navigation, setLoading }) => {
                   ...fonts.small,
                   textAlign: "center",
                   fontSize: 16,
-                  color:colors.textColor2
+                  color: colors.textColor2,
                 }}
               >
                 {countData?.data?.[0]?.count || 0}
@@ -368,7 +379,7 @@ const Account = ({ navigation, setLoading }) => {
                     ...fonts.small,
                     textAlign: "center",
                     fontSize: 16,
-                    color:colors.textColor2
+                    color: colors.textColor2,
                   }}
                 >
                   {knitData?.data?.[0]?.knited || 0}
@@ -390,7 +401,7 @@ const Account = ({ navigation, setLoading }) => {
                     ...fonts.small,
                     textAlign: "center",
                     fontSize: 16,
-                    color:colors.textColor2
+                    color: colors.textColor2,
                   }}
                 >
                   {knitData?.data?.[0]?.kniters || 0}
@@ -508,7 +519,9 @@ const Account = ({ navigation, setLoading }) => {
               //   console.log('onPress explore');
               // }}
             >
-              <View style={{ flex: 1 }}>{/* <Text>comming soon</Text> */}</View>
+              <View style={{ flex: 1 }}>
+                <ChatScreen navigation={navigation}/>
+              </View>
             </TabScreen>
           </Tabs>
         </View>

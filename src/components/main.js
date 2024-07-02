@@ -30,6 +30,7 @@ import privacypolicy from "../screens/privacypolicy";
 import forgotpass from "../screens/forgotpass";
 import setNewPass from "../screens/setNewPass";
 import codescreen from "../screens/codescreen";
+import NewComment from "../screens/newComment";
 
 const HomeScreen = () => {
   const user = useSelector(({ user }) => user);
@@ -62,6 +63,7 @@ const Main = () => {
         <Stack.Screen name="HomeScreen" component={HomeScreen} />
         <Stack.Screen name="DetailView" component={DetailView} />
         <Stack.Screen name="EditCart" component={Editcart} />
+        <Stack.Screen name="NewComment" component={ NewComment} />
         <Stack.Screen name="KnittersList" component={knittersList} />
         <Stack.Screen name="KnittedList" component={knittedList} />
         <Stack.Screen name="PrivacyPolicy" component={privacypolicy} />

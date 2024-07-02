@@ -16,6 +16,7 @@ export const color = {
   grey6: "#404040",
   grey7: "#595959",
   green: "green",
+  error:"#ff0e0e",
 };
 export const fonts = {
   h1: { fontFamily: "ProximaNova" },
